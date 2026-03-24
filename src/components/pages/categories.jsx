@@ -22,8 +22,7 @@ const Categories = () => {
   const navigate = useNavigate()
 
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const  setLoading = true;
   const [items, setItems] = useState([]);
   const [activeCategory, setActiveCategory] = useState("All");
   const[brand, setBrand] = useState("All");
@@ -107,9 +106,7 @@ const fetchData = async () => {
   };
  
 
-  if (loading) return <p>Loading data...</p>;
-  if (error) return <p>Error: {error}</p>;
-
+ 
   console.log(data)
 
 

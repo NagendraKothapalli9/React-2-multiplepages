@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import Box from '@mui/material/Box';
-import { useState } from "react";
+
 import { useNavigate } from 'react-router-dom';
 import { Grid, Typography, useMediaQuery, useTheme } from '@mui/material';
 import Marquee from "react-fast-marquee";
@@ -51,9 +51,12 @@ const Home = () => {
     { name: "", src: "https://res.cloudinary.com/dam89m7fe/image/upload/v1773636651/op4_jtpkgs.avif", path: "/categories" },
     { name: "", src: "https://res.cloudinary.com/dam89m7fe/image/upload/v1773636657/op5_mfgpdn.avif", path: "/categories" },
   ]
-  const [items, setItems] = useState(shopDrop);
-  const [items2, setItems2] = useState(brandSpotlight);
-  const [items3, setItems3] = useState(onPoint);
+  // const [items, setItems] = useState(shopDrop);
+  // const [items2, setItems2] = useState(brandSpotlight);
+  // const [items3, setItems3] = useState(onPoint);
+  const items = shopDrop;
+  const items2 = brandSpotlight;
+  const items3 = onPoint;
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -130,11 +133,11 @@ const theme = useTheme()
         <Typography variant={isDesktop ? 'h4' : 'h6'} sx={{ textAlign: 'center', my:{md:4,xs:1}}}>Bank Offers</Typography>
         <Box sx={{ mx: { lg: 8, sm: 2 } }}>
           <Marquee gradient={false} speed={100}>
-            <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636573/b1_begxdo.avif" height={'80px'} />
-            <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636573/b2_koubgg.avif" height={'80px'} />
-            <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636573/b3_en6rtc.avif" height={'80px'} />
-            <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636573/b4_yz2eju.avif" height={'80px'} />
-            <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636573/b5_r2mmaj.avif" height={'80px'} />
+            <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636573/b1_begxdo.avif" height={'80px'} alt='pic' />
+            <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636573/b2_koubgg.avif" height={'80px'} alt='pic' />
+            <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636573/b3_en6rtc.avif" height={'80px'} alt='pic'/>
+            <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636573/b4_yz2eju.avif" height={'80px'} alt='pic'/>
+            <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636573/b5_r2mmaj.avif" height={'80px'} alt='pic'/>
             {/* Add more images */}
           </Marquee>
 

@@ -36,7 +36,7 @@ const CustomSlider = ({items,settings}) => {
       >
         {items.map((item) =>(  
         <SwiperSlide>
-         <img src= {item.src}  width={'70%'} height={'auto'} style={{marginLeft: '50px'}}/>
+         <img src= {item.src}  width={'70%'} height={'auto'} style={{marginLeft: '50px'}} alt='brand'/>
         </SwiperSlide>
 
         ) )}

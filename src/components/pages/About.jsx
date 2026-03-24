@@ -18,36 +18,36 @@ const About = () => {
         <Typography variant='h5' sx={{ textAlign: 'center', mb: 4 }}>Our Branding Patners</Typography>
         <Marquee gradient={false} speed={130}>
           
-          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636673/s1_mky72n.webp" style={{ width: '150px', margin: '0 10px' }} />
-          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636678/s2_vva1pj.webp" style={{ width: '150px', margin: '0 10px' }} />
-          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636679/s3_adb5cp.webp" style={{ width: '150px', margin: '0 10px' }} />
-          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636679/s4_wr4wov.webp" style={{ width: '150px', margin: '0 10px' }} />
-          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636686/s5_pn2od9.webp" style={{ width: '150px', margin: '0 10px' }} />
-          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636686/s6_ru0zkh.webp" style={{ width: '150px', margin: '0 10px' }} />
-          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636687/s7_roedfg.webp" style={{ width: '150px', margin: '0 10px' }} />
-          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636688/s8_vgc1e6.webp" style={{ width: '150px', margin: '0 10px' }} />
-          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636691/s9_upmfmj.webp" style={{ width: '150px', margin: '0 10px' }} />
-          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636692/s10_qaq2jn.webp" style={{ width: '150px', margin: '0 10px' }} />
-          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636693/s11_vygrnc.webp" style={{ width: '150px', margin: '0 10px' }} />
+          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636673/s1_mky72n.webp" style={{ width: '150px', margin: '0 10px' }} alt='brand' />
+          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636678/s2_vva1pj.webp" style={{ width: '150px', margin: '0 10px' }} alt='brand'/>
+          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636679/s3_adb5cp.webp" style={{ width: '150px', margin: '0 10px' }} alt='brand'/>
+          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636679/s4_wr4wov.webp" style={{ width: '150px', margin: '0 10px' }} alt='brand'/>
+          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636686/s5_pn2od9.webp" style={{ width: '150px', margin: '0 10px' }} alt='brand'/>
+          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636686/s6_ru0zkh.webp" style={{ width: '150px', margin: '0 10px' }} alt='brand'/>
+          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636687/s7_roedfg.webp" style={{ width: '150px', margin: '0 10px' }} alt='brand'/>
+          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636688/s8_vgc1e6.webp" style={{ width: '150px', margin: '0 10px' }} alt='brand'/>
+          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636691/s9_upmfmj.webp" style={{ width: '150px', margin: '0 10px' }} alt='brand'/>
+          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636692/s10_qaq2jn.webp" style={{ width: '150px', margin: '0 10px' }} alt='brand'/>
+          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636693/s11_vygrnc.webp" style={{ width: '150px', margin: '0 10px' }} alt='brand'/>
         </Marquee>
       </Box>
       <Box sx={{ m: 8 }}>
         <Typography variant='h5' sx={{ textAlign: 'center', mb: 4 }}>Our Products</Typography>
         <Marquee gradient={false} speed={50}>
-          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636696/sd1_phvdo6.avif" style={{ height: '150px', margin: '0 10px' }} onClick={() => navigate('/categories')} />
-          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636696/sd2_lshjst.avif" style={{ height: '150px', margin: '0 10px' }} onClick={() => navigate('/categories')} />
-          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636697/sd3_xruagn.avif" style={{ height: '150px', margin: '0 10px' }} onClick={() => navigate('/categories')} />
-          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636700/sd4_gg8cvk.avif" style={{ height: '150px', margin: '0 10px' }} onClick={() => navigate('/categories')} />
-          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636700/sd5_esv5iu.avif" style={{ height: '150px', margin: '0 10px' }} onClick={() => navigate('/categories')} />
-          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636701/sd6_wv13o9.avif" style={{ height: '150px', margin: '0 10px' }} onClick={() => navigate('/categories')} />
-          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636701/sd7_zd2ift.avif" style={{ height: '150px', margin: '0 10px' }} onClick={() => navigate('/categories')} />
-          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636705/sd8_qtnmbg.avif" style={{ height: '150px', margin: '0 10px' }} onClick={() => navigate('/categories')} />
-          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636706/sd9_wuymay.avif" style={{ height: '150px', margin: '0 10px' }} onClick={() => navigate('/categories')} />
-          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636709/sd10_zhmpxy.avif" style={{ height: '150px', margin: '0 10px' }} onClick={() => navigate('/categories')} />
-          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636709/sd11_yszrdr.avif" style={{ height: '150px', margin: '0 10px' }} onClick={() => navigate('/categories')} />
-          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636710/sd12_iqqv2o.avif" style={{ height: '150px', margin: '0 10px' }} onClick={() => navigate('/categories')} />
-          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636711/sd13_tmrecv.avif" style={{ height: '150px', margin: '0 10px' }} onClick={() => navigate('/categories')} />
-          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636714/sd14_jjln9p.avif" style={{ height: '150px', margin: '0 10px' }} onClick={() => navigate('/categories')} />
+          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636696/sd1_phvdo6.avif" alt='brand' style={{ height: '150px', margin: '0 10px' }} onClick={() => navigate('/categories')} />
+          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636696/sd2_lshjst.avif" style={{ height: '150px', margin: '0 10px' }} onClick={() => navigate('/categories')}alt='brand' />
+          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636697/sd3_xruagn.avif" style={{ height: '150px', margin: '0 10px' }} onClick={() => navigate('/categories')} alt='brand'/>
+          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636700/sd4_gg8cvk.avif" style={{ height: '150px', margin: '0 10px' }} onClick={() => navigate('/categories')} alt='brand'/>
+          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636700/sd5_esv5iu.avif" style={{ height: '150px', margin: '0 10px' }} onClick={() => navigate('/categories')} alt='brand'/>
+          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636701/sd6_wv13o9.avif" style={{ height: '150px', margin: '0 10px' }} onClick={() => navigate('/categories')}alt='brand' />
+          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636701/sd7_zd2ift.avif" style={{ height: '150px', margin: '0 10px' }} onClick={() => navigate('/categories')} alt='brand'/>
+          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636705/sd8_qtnmbg.avif" style={{ height: '150px', margin: '0 10px' }} onClick={() => navigate('/categories')} alt='brand'/>
+          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636706/sd9_wuymay.avif" style={{ height: '150px', margin: '0 10px' }} onClick={() => navigate('/categories')} alt='brand'/>
+          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636709/sd10_zhmpxy.avif" style={{ height: '150px', margin: '0 10px' }} onClick={() => navigate('/categories')}alt='brand' />
+          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636709/sd11_yszrdr.avif" style={{ height: '150px', margin: '0 10px' }} onClick={() => navigate('/categories')} alt='brand'/>
+          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636710/sd12_iqqv2o.avif" style={{ height: '150px', margin: '0 10px' }} onClick={() => navigate('/categories')}alt='brand' />
+          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636711/sd13_tmrecv.avif" style={{ height: '150px', margin: '0 10px' }} onClick={() => navigate('/categories')}alt='brand' />
+          <img src="https://res.cloudinary.com/dam89m7fe/image/upload/v1773636714/sd14_jjln9p.avif" style={{ height: '150px', margin: '0 10px' }} onClick={() => navigate('/categories')} alt='brand'/>
         </Marquee>
       </Box>
 
