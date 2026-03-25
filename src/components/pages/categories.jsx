@@ -20,64 +20,62 @@ import axios from 'axios';
 
 const Categories = () => {
   const navigate = useNavigate()
-
   const [data, setData] = useState([]);
-  const  setLoading = true;
   const [items, setItems] = useState([]);
   const [activeCategory, setActiveCategory] = useState("All");
-  const[brand, setBrand] = useState("All");
-  const[rating, setRating] = useState('All')
- 
+  const [brand, setBrand] = useState("All");
+  const [rating, setRating] = useState('All')
 
+
+
+
+  //   const fetchData = async () => {
+  //   try {
+  //     const response = await axios.get('https://react-multi-page-24bfe-default-rtdb.asia-southeast1.firebasedatabase.app/initialProducts.json');
+
+  //     const rawData = response.data;
+
+  //     const mainKey = Object.keys(rawData)[0]; 
+  //     const productsArray = rawData[mainKey]; 
+
+  //     setData(productsArray); 
+  //     setItems(productsArray); 
+  //     setError(null);
+  //   } catch (err) {
+  //     setError(err.message);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
   useEffect(() => {
-     window.scrollTo(0, 0);
-   
-   
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          'https://react-multi-page-24bfe-default-rtdb.asia-southeast1.firebasedatabase.app/initialProducts1.json'
+        );
+
+        const rawData = response.data;
+
+        if (rawData) {
+          const formattedArray = Object.entries(rawData).map(([key, value]) => ({
+            fbId: key,
+            ...value,
+          }));
+
+          setData(formattedArray);
+          setItems(formattedArray);
+        }
+      } catch (err) {
+        console.error("Fetch Error:", err);
+      } finally {
+        // fix loading (see below)
+      }
+    };
+
     fetchData();
-  }, []); 
- 
-//   const fetchData = async () => {
-//   try {
-//     const response = await axios.get('https://react-multi-page-24bfe-default-rtdb.asia-southeast1.firebasedatabase.app/initialProducts.json');
-
-//     const rawData = response.data;
-   
-//     const mainKey = Object.keys(rawData)[0]; 
-//     const productsArray = rawData[mainKey]; 
-
-//     setData(productsArray); 
-//     setItems(productsArray); 
-//     setError(null);
-//   } catch (err) {
-//     setError(err.message);
-//   } finally {
-//     setLoading(false);
-//   }
-// };
-   
-const fetchData = async () => {
-  try {
-    const response = await axios.get('https://react-multi-page-24bfe-default-rtdb.asia-southeast1.firebasedatabase.app/initialProducts1.json');
-    const rawData = response.data;
-
-   
-    if (rawData) {
-      // Object.entries converts the object into an array of [key, value] pairs
-      const formattedArray = Object.entries(rawData).map(([key, value]) => ({
-        fbId: key,      // The Firebase unique key
-        ...value        // Spread the actual product data (name, MRP, etc.)
-      }));
-
-      setData(formattedArray);
-      setItems(formattedArray)
-    }
-  } catch (err) {
-    console.error("Fetch Error:", err);
-  } finally {
-    setLoading(false);
-  }
-};
-   const filterItems = (cat) => {
+    window.scrollTo(0, 0);
+  }, []);
+  const filterItems = (cat) => {
     setActiveCategory(cat);
     if (cat === "All") {
       setItems(data);
@@ -86,7 +84,7 @@ const fetchData = async () => {
       setItems(filtered);
     }
   };
-   const filterBrand = (bran) => {
+  const filterBrand = (bran) => {
     setBrand(bran);
     if (bran === "All") {
       setItems(data);
@@ -95,7 +93,7 @@ const fetchData = async () => {
       setItems(filtered);
     }
   };
-   const filterRating = (rat) => {
+  const filterRating = (rat) => {
     setRating(rat);
     if (rat === "All") {
       setItems(data);
@@ -104,57 +102,57 @@ const fetchData = async () => {
       setItems(filtered);
     }
   };
- 
 
- 
+
+
   console.log(data)
 
 
   return (
     <Box sx={{ mt: 10 }}>
       <Grid container spacing={2}>
-        <Grid size={{ xs: 12, md:3 }} sx={{ pl:{xs:0,md:5} ,mt:{md:8,xs:1},px:{xs:3} }}>
-        <Box display={'flex'} sx={{border:'1px solid silver',p:1.5,borderRadius:1,justifyContent:'space-between'}}>
-          <Box>
-          <Typography sx={{typography:{xs:'p',md:'h6'}, fontWeight:{xs:600},mt:{xs:1} }}> Filters</Typography>
+        <Grid size={{ xs: 12, md: 3 }} sx={{ pl: { xs: 0, md: 5 }, mt: { md: 8, xs: 1 }, px: { xs: 3 } }}>
+          <Box display={'flex'} sx={{ border: '1px solid silver', p: 1.5, borderRadius: 1, justifyContent: 'space-between' }}>
+            <Box>
+              <Typography sx={{ typography: { xs: 'p', md: 'h6' }, fontWeight: { xs: 600 }, mt: { xs: 1 } }}> Filters</Typography>
+            </Box>
+            <Box sx={{ mt: { xs: 1, md: 2 } }}>
+              <Typography variant='p' sx={{ color: '#737373', float: 'right', fontWeight: '600' }}>ClearAll</Typography>
+            </Box>
           </Box>
-          <Box sx={{mt:{xs:1,md:2}}}>
-          <Typography variant='p' sx={{color:'#737373', float:'right',fontWeight:'600'}}>ClearAll</Typography>
+          <Box sx={{ border: '1px solid silver', p: 1.5, borderRadius: 1 }}>
+            <Box>
+              <Typography sx={{ Typography: { xs: 'body1', md: 'h6' }, fontWeight: { xs: 600 } }}> Department</Typography>
+            </Box>
+            <Box sx={{ mt: 1 }}>
+              <Typography variant='p' sx={{ color: '#737373', pl: 1, fontWeight: '600' }}>{activeCategory === "All" ? "Our Collection" : `${activeCategory}'s Collection`}
+              </Typography>
+            </Box>
           </Box>
-        </Box>
-        <Box sx={{border:'1px solid silver',p:1.5,borderRadius:1}}>
-          <Box>
-          <Typography sx={{Typography:{xs:'body1',md:'h6'},fontWeight:{xs:600}}}> Department</Typography>
-          </Box>
-          <Box sx={{mt:1}}>
-          <Typography variant='p' sx={{color:'#737373',pl:1,fontWeight:'600'}}>{activeCategory === "All" ? "Our Collection" : `${activeCategory}'s Collection`}
-         </Typography>
-          </Box>
-        </Box>
           <Accordion sx={{}}>
             <AccordionSummary
               expandIcon={<ArrowDropDownIcon />}
               aria-controls="panel2-content"
               id="panel2-header"
             >
-              <Typography component="p" sx={{fontSize:'15px',}}>Category</Typography>
+              <Typography component="p" sx={{ fontSize: '15px', }}>Category</Typography>
             </AccordionSummary>
             <AccordionDetails>
               <FormControl component="fieldset">
                 <RadioGroup
                   aria-label="categories"
-                  value={activeCategory} 
+                  value={activeCategory}
                   onChange={(e) => filterItems(e.target.value)}
                 >
                   {['All', 'Women', 'Men', 'Kid', 'Footware', 'Watch', 'Electronic'].map((cat) => (
                     <FormControlLabel
                       key={cat}
                       value={cat}
-                      control={<Radio size="small" />} 
+                      control={<Radio size="small" />}
                       label={cat}
                       sx={{
                         textTransform: 'capitalize',
-                        '& .MuiFormControlLabel-label': { fontSize: '0.9rem' } 
+                        '& .MuiFormControlLabel-label': { fontSize: '0.9rem' }
                       }}
                     />
                   ))}
@@ -168,24 +166,24 @@ const fetchData = async () => {
               aria-controls="panel2-content"
               id="panel2-header"
             >
-              <Typography component="p" sx={{fontSize:'15px',}}>Brand</Typography>
+              <Typography component="p" sx={{ fontSize: '15px', }}>Brand</Typography>
             </AccordionSummary>
             <AccordionDetails>
               <FormControl component="fieldset">
                 <RadioGroup
-                   aria-label="brand"
-                  value={brand} 
+                  aria-label="brand"
+                  value={brand}
                   onChange={(e) => filterBrand(e.target.value)}
                 >
-                  {["All" ,"Timex",'Little Bansi',"Campus",'PSPeaches',"Royal Enfield"].map((bran) => (
+                  {["All", "Timex", 'Little Bansi', "Campus", 'PSPeaches', "Royal Enfield"].map((bran) => (
                     <FormControlLabel
                       key={bran}
                       value={bran}
-                      control={<Radio size="small" />} 
+                      control={<Radio size="small" />}
                       label={bran}
                       sx={{
                         textTransform: 'capitalize',
-                        '& .MuiFormControlLabel-label': { fontSize: '0.9rem' } 
+                        '& .MuiFormControlLabel-label': { fontSize: '0.9rem' }
                       }}
                     />
                   ))}
@@ -199,20 +197,20 @@ const fetchData = async () => {
               aria-controls="panel2-content"
               id="panel2-header"
             >
-              <Typography component="p" sx={{fontSize:'15px',}}>Ratings</Typography>
+              <Typography component="p" sx={{ fontSize: '15px', }}>Ratings</Typography>
             </AccordionSummary>
             <AccordionDetails>
               <FormControl component="fieldset">
                 <RadioGroup
-                   aria-label="rat"
-                  value={rating} 
+                  aria-label="rat"
+                  value={rating}
                   onChange={(e) => filterRating(e.target.value)}
                 >
-                  {['All',4,4.1,4.2,4.3,4.4,4.5,4.6,4.7,4.8,4.9].map((rat) => (
+                  {['All', 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9].map((rat) => (
                     <FormControlLabel
                       key={rat}
                       value={rat}
-                      control={<Radio size="small" />} 
+                      control={<Radio size="small" />}
                       label={rat}
                       sx={{
                         textTransform: 'capitalize',
@@ -225,9 +223,9 @@ const fetchData = async () => {
             </AccordionDetails>
           </Accordion>
         </Grid>
-        <Grid size={{ xs: 12, md:9 }}>
+        <Grid size={{ xs: 12, md: 9 }}>
           <Box>
-            <Typography  sx={{ textAlign: 'center', mb: 1,fontSize:'32px',fontWeight:'600', textTransform: 'capitalize',typography:{xs:'h6',md:'h4'} }}>
+            <Typography sx={{ textAlign: 'center', mb: 1, fontSize: '32px', fontWeight: '600', textTransform: 'capitalize', typography: { xs: 'h6', md: 'h4' } }}>
               {activeCategory === "All" ? "Our Collection" : `${activeCategory}'s Collection`}
             </Typography>
             <Box>
@@ -246,26 +244,26 @@ const fetchData = async () => {
                   flexDirection: 'column',
                   transition: '0.3s',
                   '&:hover': { boxShadow: 6 },
-                  borderRadius:2
+                  borderRadius: 2
                 }}
                   // onClick={() => navigate(`/product/${item.id}`)}
                   onClick={() => navigate(`/product/${item.fbId}`)}>
                   <CardMedia
-                    sx={{ height: 280, objectFit: 'fill'}}
+                    sx={{ height: 280, objectFit: 'fill' }}
                     image={item.src}
                   />
-                  <CardContent sx={{ height: '100px',}} >
-                    <Typography gutterBottom variant="p" component="div" sx={{ height: '10px',fontSize:'20px', mb: 2,fontWeight:'800' }}>
+                  <CardContent sx={{ height: '100px', }} >
+                    <Typography gutterBottom variant="p" component="div" sx={{ height: '10px', fontSize: '20px', mb: 2, fontWeight: '800' }}>
                       {item.name}
                     </Typography>
                     <Typography variant="body2" sx={{ height: '60px' }}>
                       {/* {item.discription} */}
                       {item.description}
                     </Typography>
-                    <Typography variant="h6" sx={{ fontSize: "15px", fontWeight: '600', height: '10px', color: 'black',mb:2 }}>
+                    <Typography variant="h6" sx={{ fontSize: "15px", fontWeight: '600', height: '10px', color: 'black', mb: 2 }}>
                       {item.MRP}/-  <span style={{ marginLeft: '10px', fontSize: '13px', color: 'green' }}> {item.off}Off</span>
                     </Typography>
-                    <Typography variant="p" sx={{ fontSize: "11px",height: '10px',color:'crimson'}}>
+                    <Typography variant="p" sx={{ fontSize: "11px", height: '10px', color: 'crimson' }}>
                       {item.status}
                     </Typography>
                   </CardContent>

@@ -40,7 +40,7 @@ const Cart = () => {
           {CART_ITEMS.map((item) => (
             <Grid container key={item.id} sx={{ border: '1px solid #e0e0e0', mb: 2, borderRadius: '8px', overflow: 'hidden' }}>
 
-              <Grid item xs={12} sm={3} sx={{ display: 'flex', justifyContent: 'center', p:{md:2}, px:{xs:10} }}>
+              <Grid item xs={12} sm={3} sx={{ display: 'flex', justifyContent: 'center', p: { md: 2 }, px: { xs: 10 } }}>
                 <img src={item.image} alt={item.name} style={{ maxHeight: '150px', objectFit: 'contain' }} />
               </Grid>
 
